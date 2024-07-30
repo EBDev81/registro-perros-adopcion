@@ -1,3 +1,4 @@
+
 # Registro de Perros en Adopción
 
 El proyecto "Registro de Perros en Adopción" es una aplicación web diseñada para facilitar la gestión y visualización de perros disponibles para adopción. Esta aplicación permite a los usuarios ver detalles de los perros, buscar perros por nombre, añadir nuevos perros al registro, listar todos los perros, listar los 20 perros más jóvenes, paginar los resultados de la lista de perros y eliminar registros de perros específicos.
@@ -54,18 +55,14 @@ El objetivo principal de este proyecto es proporcionar una herramienta efectiva 
 El archivo `application.properties` está configurado para usar H2 como base de datos en memoria:
 
 ```properties
-spring.application.name=registro-perros-adopcion
-spring.datasource.url=jdbc:h2:mem:perrosdb
-spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
-spring.datasource.password=sa
-spring.datasource.platform=h2
+spring.datasource.password=password
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
-spring.datasource.initialization-mode=always
-spring.datasource.schema=classpath:schema.sql
-spring.datasource.data=classpath:data.sql
-spring.jpa.hibernate.ddl-auto=none
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
 ```
 ### Dependencias
 
@@ -142,8 +139,10 @@ http://localhost:8080/swagger-ui.html
 ```
 
 ### Endpoints de la API
-En la raiz del proyecto se encuentra un archivollamado  Registro_Perros_Adopcion_API.postman_collection.json que es una colección de postman para poder probar los endpoints.
 
+En la raiz del proyecto se encuentra un archivollamado "Registro_Perros_Adopcion_API.postman_collection.json" que es una colección de postman para poder probar los endpoints.
+
+#### Perros
 - **GET /api/perros/{id}**: Obtiene los detalles de un perro por su ID, incluyendo la información del propietario.
 - **GET /api/perros/nombre/{nombre}**: Busca perros por nombre.
 - **POST /api/perros**: Crea un nuevo registro de perro, incluyendo la información del propietario.
@@ -151,3 +150,33 @@ En la raiz del proyecto se encuentra un archivollamado  Registro_Perros_Adopcion
 - **GET /api/perros/youngest**: Lista los 20 perros más jóvenes.
 - **GET /api/perros/page?page={page}**: Lista los perros en formato paginado.
 - **DELETE /api/perros/{id}**: Elimina un perro por su ID.
+
+#### Propietarios
+- **GET /api/propietarios/{id}**: Obtiene los detalles de un propietario por su ID.
+- **POST /api/propietarios**: Crea un nuevo propietario.
+- **GET /api/propietarios**: Lista todos los propietarios.
+- **DELETE /api/propietarios/{id}**: Elimina un propietario por su ID.
+
+## Informe Detallado de un problema persistente y la Solución aplicada
+
+### Contexto del Problema
+En el proyecto, se presentaba un problema al intentar mostrar una lista paginada de perros en la interfaz de usuario y también a travñes de postman. A pesar de que la solicitud se enviaba correctamente desde el formulario o desde Postman, los datos no se mostraban en el contenedor correspondiente. Después de varios intentos de depuración, se identificaron y corrigieron varios puntos, incluyendo la verificación de la existencia de elementos en el DOM (El Document Object Model (DOM) es una interfaz de programación para los documentos HTML y XML. Define la estructura lógica de los documentos y la manera en que se accede y manipula.) y el renderizado de datos de prueba para verificar la visualización.
+
+### Análisis del Problema
+El problema principal estaba relacionado con la anotación `@JsonIdentityInfo` en la clase `Perro`. Esta anotación es utilizada por Jackson para manejar la serialización y deserialización de objetos con relaciones bidireccionales, evitando problemas de referencias cíclicas. Sin embargo, en este caso, la anotación estaba interfiriendo con la correcta serialización de los datos, lo que provocaba que los datos no se mostraran correctamente en la interfaz de usuario.
+
+### Solución Aplicada
+1. **Remoción de la Anotación `@JsonIdentityInfo`**:
+    - Se identificó que al eliminar la anotación `@JsonIdentityInfo` de la clase `Perro`, el problema se resolvía, permitiendo que los datos se mostraran correctamente en la interfaz de usuario.
+
+2. **Verificación de Existencia de Elementos en el DOM**:
+    - Se añadieron condiciones en el archivo JavaScript para verificar que los elementos (formularios y botones) existían antes de agregar los event listeners, evitando errores si algún elemento no estaba presente en el DOM.
+
+3. **Forzar el Renderizado de Datos de Prueba**:
+    - Se forzó el renderizado de datos de prueba para verificar que el contenedor `perrosPagedResult` estaba funcionando correctamente. Esto ayudó a descartar problemas de estilo o visualización y confirmó que el problema estaba en la recepción de los datos desde el servidor. Una vez detectado el problema se procedió a la eliminación de este renderizado de prueba.
+
+### Conclusión
+El problema se debía a la anotación `@JsonIdentityInfo` en la clase `Perro`, que interfería con la correcta serialización de los datos. Al eliminar esta anotación, se permitió que los datos se mostraran correctamente en la interfaz de usuario. Además, las verificaciones de la existencia de elementos en el DOM y el renderizado de datos de prueba ayudaron a identificar y confirmar la causa del problema.
+
+Esta solución asegura que los datos se serialicen correctamente y se muestren en la interfaz de usuario sin problemas, mejorando la experiencia del usuario y la funcionalidad del sistema.
+
