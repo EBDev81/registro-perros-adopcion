@@ -54,14 +54,18 @@ El objetivo principal de este proyecto es proporcionar una herramienta efectiva 
 El archivo `application.properties` está configurado para usar H2 como base de datos en memoria:
 
 ```properties
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
+spring.application.name=registro-perros-adopcion
+spring.datasource.url=jdbc:h2:mem:perrosdb
+spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.username=sa
-spring.datasource.password=password
+spring.datasource.password=sa
+spring.datasource.platform=h2
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.initialization-mode=always
+spring.datasource.schema=classpath:schema.sql
+spring.datasource.data=classpath:data.sql
+spring.jpa.hibernate.ddl-auto=none
 ```
 ### Dependencias
 
