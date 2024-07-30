@@ -156,6 +156,9 @@ http://localhost:8080/swagger-ui.html
 - **DELETE /api/propietarios/{id}**: Elimina un propietario por su ID.
 
 
+
+
+
 ## Informe Detallado de un problema persistente y la Solución aplicada
 
 ### Contexto del Problema
