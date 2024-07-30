@@ -142,6 +142,7 @@ http://localhost:8080/swagger-ui.html
 ```
 
 ### Endpoints de la API
+En la raiz del proyecto se encuentra un archivollamado  Registro_Perros_Adopcion_API.postman_collection.json que es una colección de postman para poder probar los endpoints.
 
 - **GET /api/perros/{id}**: Obtiene los detalles de un perro por su ID, incluyendo la información del propietario.
 - **GET /api/perros/nombre/{nombre}**: Busca perros por nombre.
