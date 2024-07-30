@@ -140,6 +140,7 @@ http://localhost:8080/swagger-ui.html
 
 ### Endpoints de la API
 
+#### Perros
 - **GET /api/perros/{id}**: Obtiene los detalles de un perro por su ID, incluyendo la información del propietario.
 - **GET /api/perros/nombre/{nombre}**: Busca perros por nombre.
 - **POST /api/perros**: Crea un nuevo registro de perro, incluyendo la información del propietario.
@@ -147,6 +148,12 @@ http://localhost:8080/swagger-ui.html
 - **GET /api/perros/youngest**: Lista los 20 perros más jóvenes.
 - **GET /api/perros/page?page={page}**: Lista los perros en formato paginado.
 - **DELETE /api/perros/{id}**: Elimina un perro por su ID.
+
+#### Propietarios
+- **GET /api/propietarios/{id}**: Obtiene los detalles de un propietario por su ID.
+- **POST /api/propietarios**: Crea un nuevo propietario.
+- **GET /api/propietarios**: Lista todos los propietarios.
+- **DELETE /api/propietarios/{id}**: Elimina un propietario por su ID.
 
 
 ## Informe Detallado de un problema persistente y la Solución aplicada
