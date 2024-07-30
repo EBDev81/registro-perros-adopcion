@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Registro de perros en adopción</title>
+    <link rel="stylesheet" href="/css/perro.css">
+    <style>
+        .perro-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .perro-gallery img {
+            max-width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .perro-gallery-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro de perros en adopción</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/reg-perros">Gestión de perros</a></li>
+                <li><a href="/propietarios">Gestión de propietarios</a></li>
+                <li><a href="/lista-perros">Lista de perros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Bienvenido</h2>
+            <p>Encuentra a tu nuevo mejor amigo entre nuestros perros en adopción.</p>
+        </section>
+        <section>
+            <h2>Perros en Adopción</h2>
+            <p>Estos son algunos de los perros que necesitan un hogar.</p>
+            <div class="perro-gallery">
+                <div class="perro-gallery-row">
+                    <img src="/images/apollo.jpg" alt="Apollo">
+                    <img src="/images/bailey.jpg" alt="Bailey">
+                    <img src="/images/bella.jpg" alt="Bella">
+                    <img src="/images/bruno.jpg" alt="Bruno">
+                    <img src="/images/buster.jpg" alt="Buster">
+                </div>
+                <div class="perro-gallery-row">
+                    <img src="/images/charlie.jpg" alt="Charlie">
+                    <img src="/images/coco.jpg" alt="Coco">
+                    <img src="/images/duke.jpg" alt="Duke">
+                    <img src="/images/fido.jpg" alt="Fido">
+                    <img src="/images/gizmo.jpg" alt="Gizmo">
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="/lista-perros" class="btn">Ver Lista de Perros</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Registro de Perros en Adopción</p>
+    </footer>
+</body>
+</html>

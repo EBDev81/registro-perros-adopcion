@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de propietarios</title>
+    <link rel="stylesheet" href="/css/perro.css">
+    <style>
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro de propietarios</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/reg-perros">Gestión de perros</a></li>
+                <li><a href="/propietarios">Gestión de propietarios</a></li>
+                <li><a href="/lista-perros">Lista de perros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Mostrar propietario por ID</h2>
+            <form id="getByIdForm">
+                <label for="propietarioId">ID del Propietario:</label>
+                <input type="number" id="propietarioId" name="propietarioId" required>
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="propietarioByIdResult" class="result-container"></div>
+        </section>
+        
+        <section>
+            <h2>Subir un propietario</h2>
+            <form id="createPropietarioForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Subir</button>
+            </form>
+            <div id="createPropietarioResult" class="result-container"></div>
+        </section>
+        
+        <section>
+            <h2>Listar todos los propietarios</h2>
+            <button id="listAllPropietariosBtn">Listar</button>
+            <div id="listAllPropietariosResult" class="result-container"></div>
+        </section>
+        
+        <section>
+            <h2>Borrar propietario</h2>
+            <form id="deletePropietarioForm">
+                <label for="deletePropietarioId">ID del propietario:</label>
+                <input type="number" id="deletePropietarioId" name="deletePropietarioId" required>
+                <button type="submit">Borrar</button>
+            </form>
+            <div id="deletePropietarioResult" class="result-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Registro de perros en adopción</p>
+    </footer>
+    <script src="/js/propietario.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listado de los 20 Perros Más Jóvenes</title>
+<link rel="stylesheet" href="/css/perro.css">
+<style>
+nav {
+	background-color: #333;
+	color: white;
+	padding: 10px 0;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 15px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+header {
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.perro-card {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 10px;
+	text-align: center;
+	background-color: #f9f9f9; /* Asegura un buen contraste con el texto */
+}
+
+.perro-card img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.result-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Listado de los 20 Perros Más Jóvenes</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/reg-perros">Gestión de Perros</a></li>
+				<li><a href="/propietarios">Gestión de Propietarios</a></li>
+				<li><a href="/lista-perros">Lista de Perros</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<div id="youngestPerrosResult" class="result-container"></div>
+			<script src="/js/youngest-perros.js"></script>
+
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 Registro de Perros en Adopción</p>
+	</footer>
+	<script src="/js/youngest-perros.js"></script>
+</body>
+</html>

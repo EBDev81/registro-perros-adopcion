@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de perros en adopción</title>
+<link rel="stylesheet" href="/css/perro.css">
+<style>
+nav {
+	background-color: #333;
+	color: white;
+	padding: 10px 0;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 15px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+header {
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Registro de perros en adopción</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/reg-perros">Gestión de perros</a></li>
+				<li><a href="/propietarios">Gestión de propietarios</a></li>
+				<li><a href="/lista-perros">Lista de perros</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<!-- Sección para mostrar perro por ID -->
+		<section>
+			<h2>Mostrar perro por ID</h2>
+			<form id="getByIdForm">
+				<label for="perroId">ID del perro:</label> <input type="number"
+					id="perroId" name="perroId" required>
+				<button type="submit">Buscar</button>
+			</form>
+			<div id="perroByIdResult" class="result-container"></div>
+		</section>
+		<!-- Sección para mostrar perro por nombre -->
+		<section>
+			<h2>Mostrar perro por nombre</h2>
+			<form id="getByNameForm">
+				<label for="perroNombre">Nombre del perro:</label> <input
+					type="text" id="perroNombre" name="perroNombre" required>
+				<button type="submit">Buscar</button>
+			</form>
+			<div id="perroByNameResult" class="result-container"></div>
+		</section>
+		<!-- Sección para subir un perro -->
+		<section>
+			<h2>Subir un perro</h2>
+			<form id="createPerroForm">
+				<label for="nombre">Nombre:</label> <input type="text" id="nombre"
+					name="nombre" required> <label for="fechaNac">Fecha
+					de nacimiento:</label> <input type="date" id="fechaNac" name="fechaNac"
+					required> <label for="raza">Raza:</label> <input
+					type="text" id="raza" name="raza" required> <label
+					for="peso">Peso:</label> <input type="number" id="peso" name="peso"
+					step="0.01" required> <label for="tiene_chip">¿Tiene
+					chip?</label> <input type="checkbox" id="tiene_chip" name="tiene_chip">
+
+				<label for="urlFoto">URL de la foto:</label> <input type="text"
+					id="urlFoto" name="urlFoto" required> <label
+					for="propietario_id">ID del propietario (opcional):</label> <input
+					type="number" id="propietario_id" name="propietario_id">
+
+				<button type="submit">Subir</button>
+			</form>
+			<div id="createPerroResult" class="result-container"></div>
+		</section>
+		<!-- Sección para listar todos los perros -->
+		<section>
+			<h2>Listar todos los perros</h2>
+			<button onclick="window.location.href='/lista-perros'">Listar
+				Perros</button>
+			<div id="listAllPerrosResult" class="result-container"></div>
+		</section>
+		<!-- Sección para listar los 20 perros más jóvenes -->
+		<section>
+			<h2>Listar los 20 perros más jóvenes</h2>
+			<button onclick="window.location.href='/youngest-perros'">Listar</button>
+		</section>
+		<!-- Sección para mostrar perros en páginas de 5 -->
+		<section>
+			<h2>Mostrar perros en páginas de 5</h2>
+			<form id="getPerrosPagedForm">
+				<label for="page">Número de página:</label> <input type="number"
+					id="page" name="page" required>
+				<button type="submit">Mostrar</button>
+			</form>
+			<div id="perrosPagedResult" class="result-container"></div>
+		</section>
+		<!-- Sección para borrar un perro -->
+		<section>
+			<h2>Borrar perro</h2>
+			<form id="deletePerroForm">
+				<label for="deletePerroId">ID del perro:</label> <input
+					type="number" id="deletePerroId" name="deletePerroId" required>
+				<button type="submit">Borrar</button>
+			</form>
+			<div id="deletePerroResult" class="result-container"></div>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 Registro de perros en adopción</p>
+	</footer>
+	<script src="/js/perro.js"></script>
+</body>
+</html>

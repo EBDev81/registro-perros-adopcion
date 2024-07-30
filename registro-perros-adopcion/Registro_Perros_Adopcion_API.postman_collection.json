@@ -1,0 +1,258 @@
+{
+	"info": {
+		"name": "Registro Perros Adopcion API",
+		"description": "Colección para probar la API de registro de perros en adopción",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Perro by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros/:id",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Perro by Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros/nombre/:nombre",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros",
+						"nombre",
+						":nombre"
+					],
+					"variable": [
+						{
+							"key": "nombre",
+							"value": "Fido"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Create Perro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nombre\":\"Ron\",\"fechaNac\":\"2010-12-31\",\"raza\":\"Labrador\",\"peso\":33,\"tiene_chip\":true,\"urlFoto\":\"/images/ron.jpg\",\"propietario\":{\"id\":3}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/perros",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros"
+					]
+				}
+			}
+		},
+		{
+			"name": "List All Perros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros"
+					]
+				}
+			}
+		},
+		{
+			"name": "List Youngest 20 Perros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros/youngest",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros",
+						"youngest"
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Perros Paged",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros/page?page=0",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros",
+						"page"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Delete Perro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/perros/:id",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"perros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Propietario by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/propietarios/:id",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"propietarios",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Create Propietario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nombre\":\"Juan Perez\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/propietarios",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"propietarios"
+					]
+				}
+			}
+		},
+		{
+			"name": "List All Propietarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/propietarios",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"propietarios"
+					]
+				}
+			}
+		},
+		{
+			"name": "Delete Propietario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/propietarios/:id",
+					"host": [
+						"localhost:8080"
+					],
+					"path": [
+						"api",
+						"propietarios",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			}
+		}
+	]
+}
