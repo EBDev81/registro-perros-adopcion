@@ -20,9 +20,6 @@ public class PerroController {
 	@Autowired
 	private PerroService perroService;
 
-//	@Autowired
-//	private ObjectMapper objectMapper;
-
 	// Endpoint para obtener un perro por su ID
 	@GetMapping("/{id}")
 	public ResponseEntity<Perro> getPerroById(@PathVariable Long id) {
