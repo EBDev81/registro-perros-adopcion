@@ -1,3 +1,4 @@
+<!-- Fichero usado para sacar logs, actualmente no necesario -->
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
