@@ -63,11 +63,6 @@
 			<version>2.7.0</version>
 		</dependency>
 		<dependency>
-			<groupId>io.keepcoding.api</groupId>
-			<artifactId>api-rest</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
