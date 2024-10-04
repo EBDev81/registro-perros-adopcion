@@ -180,3 +180,4 @@ El problema se debía a la anotación `@JsonIdentityInfo` en la clase `Perro`, q
 
 Esta solución asegura que los datos se serialicen correctamente y se muestren en la interfaz de usuario sin problemas, mejorando la experiencia del usuario y la funcionalidad del sistema.
 
+![Captura de pantalla 2024-10-04 a las 10 37 57](https://github.com/user-attachments/assets/0d31b903-1fae-4bf3-9014-d80ed2f2376f)
